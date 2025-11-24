@@ -1,7 +1,7 @@
 
 import React from 'react';
 import GlassCard from '../components/GlassCard';
-import { EXPERIENCE_DATA, SKILLS_DATA, PROFILE_AVATAR_URL, PROJECTS_DATA } from '../constants';
+import { EXPERIENCE_DATA, SKILLS_DATA, PROFILE_AVATAR_URL, PROJECTS_DATA, PROFILE_INFO } from '../constants';
 import { MapPin, Link as LinkIcon, Mail, Briefcase, FolderGit2, Cpu } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
@@ -39,21 +39,21 @@ const Profile: React.FC = () => {
            </div>
         </div>
         <div className="text-center md:text-left space-y-2">
-          <h1 className="text-4xl font-bold text-gray-900">Alex</h1>
-          <p className="text-lg text-gray-600 font-medium">{t('profile.role')}</p>
+          <h1 className="text-4xl font-bold text-gray-900">{PROFILE_INFO.name}</h1>
+          <p className="text-lg text-gray-600 font-medium">{t(PROFILE_INFO.role)}</p>
           <div className="flex flex-wrap justify-center md:justify-start gap-4 text-sm text-gray-500 pt-2">
-            <span className="flex items-center gap-1"><MapPin size={14} /> {t('profile.location')}</span>
-            <span className="flex items-center gap-1"><LinkIcon size={14} /> alex.design</span>
-            <span className="flex items-center gap-1"><Mail size={14} /> hello@alex.design</span>
+            <span className="flex items-center gap-1"><MapPin size={14} /> {t(PROFILE_INFO.location)}</span>
+            <span className="flex items-center gap-1"><LinkIcon size={14} /> {PROFILE_INFO.website}</span>
+            <span className="flex items-center gap-1"><Mail size={14} /> {PROFILE_INFO.email}</span>
           </div>
         </div>
       </div>
 
       {/* About Me */}
       <GlassCard className="animate-slide-up">
-        <h2 className="text-xl font-bold text-gray-900 mb-4">{t('profile.about_title')}</h2>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">{t(PROFILE_INFO.aboutTitle)}</h2>
         <p className="text-gray-600 leading-relaxed">
-          {t('profile.about_desc')}
+          {t(PROFILE_INFO.aboutDesc)}
         </p>
       </GlassCard>
 

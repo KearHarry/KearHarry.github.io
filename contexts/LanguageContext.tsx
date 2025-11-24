@@ -26,10 +26,10 @@ const translations: Record<Language, Record<string, string>> = {
     'home.read_more': '阅读全文',
     'home.all': '全部',
     
-    'profile.role': '高级前端工程师 & UI 设计师',
-    'profile.location': '中国，上海',
+    'profile.role': 'Unity 游戏开发',
+    'profile.location': '中国，成都',
     'profile.about_title': '关于我',
-    'profile.about_desc': '专注于打造简约而高性能的数字体验。作为一名兼具设计与工程背景的开发者，我致力于弥合创意愿景与技术实现之间的鸿沟。我相信最好的界面是那些让人感觉不到存在的界面。',
+    'profile.about_desc': 'Hello！我的昵称千尘，性别男，电子科技大学软件工程大二学生。我有Unity游戏开发经验，计算机基础知识掌握扎实，能够在工作中很好的完成自己的任务。此外，我有着充满激情的工作态度，团队协同作战能力强，同时我也具备独立开发的能力，擅于发现并解决问题。我的执行力强、责任感高、集体荣誉感强、敢于担当。十分期待与您的合作!',
     'profile.exp_title': '工作经历',
     'profile.portfolio_title': '作品集',
     'profile.skills_title': '技能专长',
