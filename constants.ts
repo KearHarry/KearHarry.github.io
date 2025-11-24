@@ -40,7 +40,8 @@ export const CATEGORIES: CategoryGroup[] = [
  * 📝 文章列表
  */
 export const POST_FILES = [
-  'Game_1_save_the_forest.md',
+  'Game_1_拯救森林.md',
+  'Game_2_迷雾森林.md',
 ];
 
 // ==============================================================================

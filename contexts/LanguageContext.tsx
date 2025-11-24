@@ -78,10 +78,10 @@ const translations: Record<Language, Record<string, string>> = {
     'home.read_more': 'Read More',
     'home.all': 'All',
 
-    'profile.role': 'Senior Frontend Engineer & UI Designer',
-    'profile.location': 'Shanghai, China',
+    'profile.role': 'Unity Game Developer',
+    'profile.location': 'Chengdu, China',
     'profile.about_title': 'About Me',
-    'profile.about_desc': 'Focused on crafting minimalist and high-performance digital experiences. Bridging the gap between creative vision and technical implementation. I believe the best interface is the one you don\'t notice.',
+    'profile.about_desc': 'Hello! My nickname is Qianchen. I am a male sophomore student majoring in Software Engineering at UESTC. I have experience in Unity game development and a solid foundation in computer science, enabling me to complete tasks effectively. I am passionate about my work, have strong teamwork skills, and am also capable of independent development with good problem-solving abilities. I am highly executive, responsible, have a strong sense of collective honor, and am willing to take on responsibilities. I look forward to working with you!',
     'profile.exp_title': 'Experience',
     'profile.portfolio_title': 'Portfolio',
     'profile.skills_title': 'Skills',
