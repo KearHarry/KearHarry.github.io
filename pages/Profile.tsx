@@ -64,14 +64,16 @@ const Profile: React.FC = () => {
         </h2>
         <div className="space-y-4">
           {EXPERIENCE_DATA.map((job, idx) => (
-            <GlassCard key={idx} className="flex flex-col md:flex-row gap-4 md:gap-8">
-              <div className="md:w-1/3">
-                <h3 className="font-bold text-gray-900">{job.company}</h3>
-                <p className="text-sm text-gray-500 font-medium">{job.period}</p>
-              </div>
-              <div className="md:w-2/3">
-                 <h4 className="font-semibold text-gray-800 mb-2">{job.role}</h4>
-                 <p className="text-gray-600 text-sm leading-relaxed">{job.description}</p>
+            <GlassCard key={idx}>
+              <div className="flex flex-col md:flex-row gap-4 md:gap-8">
+                <div className="md:w-1/3">
+                  <h3 className="font-bold text-gray-900">{job.company}</h3>
+                  <p className="text-sm text-gray-500 font-medium">{job.period}</p>
+                </div>
+                <div className="md:w-2/3">
+                  <h4 className="font-semibold text-gray-800 mb-2">{job.role}</h4>
+                  <p className="text-gray-600 text-sm leading-relaxed">{job.description}</p>
+                </div>
               </div>
             </GlassCard>
           ))}
