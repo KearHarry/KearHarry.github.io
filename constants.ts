@@ -62,7 +62,7 @@ export const PROFILE_AVATAR_URL = "/images/avatar.jpg";
 
 export const SOCIAL_LINKS = {
   github: "https://github.com/KearHarry",
-  leetcode: "https://leetcode.cn/u/your-username"
+  leetcode: "https://leetcode.cn/u/angry-nobel9kk/"
 };
 
 export const EXPERIENCE_DATA: Experience[] = [
@@ -85,6 +85,12 @@ export const PROJECTS_DATA: Project[] = [
     title: '梦溪物理志',
     description: "以中国古代科学家沈括为主人公的物理益智游戏",
     imageUrl: 'images/Works/2.png',
+    link: ''
+  },
+  {
+    title: '拯救森林',
+    description: "Unity 2D塔防游戏",
+    imageUrl: 'images/Works/3.png',
     link: ''
   },
   
