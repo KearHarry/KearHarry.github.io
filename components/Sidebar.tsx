@@ -106,7 +106,7 @@ const Sidebar: React.FC = () => {
                             <div key={group.name} className="flex flex-col">
                                 {/* Main Category */}
                                 <Link 
-                                    to={`/?category=${group.name}`}
+                                    to={`/?category=${encodeURIComponent(group.name)}`}
                                     className={`
                                         relative flex items-center justify-between px-4 py-2.5 mx-2 rounded-lg text-base font-medium transition-all duration-200 group
                                         ${currentCategory === group.name 
@@ -128,7 +128,7 @@ const Sidebar: React.FC = () => {
                                     {group.items.map(subItem => (
                                         <Link
                                             key={subItem}
-                                            to={`/?category=${subItem}`}
+                                            to={`/?category=${encodeURIComponent(subItem)}`}
                                             className={`
                                                 block pl-4 py-2 text-[15px] transition-colors rounded-r-lg
                                                 ${currentCategory === subItem 
