@@ -16,15 +16,15 @@ export interface CategoryGroup {
 export const CATEGORIES: CategoryGroup[] = [
   { 
     name: 'C++', 
-    items: ['面试题', '算法题'] 
+    items: ['C++面试题', 'C++算法题'] 
   },
   {
     name: 'C#',
-    items: ['面试题','工程题']
+    items: ['C#面试题','C#工程题']
   },
   {
     name: 'Unity',
-    items: ['面试题','工程题']
+    items: ['Unity面试题','Unity工程题']
   },
   { 
     name: '游戏', 
