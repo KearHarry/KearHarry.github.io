@@ -15,16 +15,16 @@ export interface CategoryGroup {
  */
 export const CATEGORIES: CategoryGroup[] = [
   { 
-    name: '设计', 
-    items: ['UI设计', '交互体验', '平面视觉'] 
+    name: 'C++', 
+    items: ['面试题', '算法题'] 
   },
-  { 
-    name: '工程', 
-    items: ['前端开发', '后端架构', '人工智能', 'DevOps'] 
+  {
+    name: 'C#',
+    items: ['面试题','工程题']
   },
-  { 
-    name: '产品', 
-    items: ['产品思维', '用户增长', '商业分析'] 
+  {
+    name: 'Unity',
+    items: ['面试题','工程题']
   },
   { 
     name: '游戏', 
@@ -38,10 +38,13 @@ export const CATEGORIES: CategoryGroup[] = [
 
 /**
  * 📝 文章列表
+ * 格式: '分类文件夹/文件名.md'
+ * 文件夹名对应 CATEGORIES 中的一级分类 name，文章会自动归入该大分类
  */
 export const POST_FILES = [
-  'Game_1_拯救森林.md',
-  'Game_2_迷雾森林.md',
+  '游戏/Game_1_拯救森林.md',
+  '游戏/Game_2_迷雾森林.md',
+  'C++/C++面试题（1）.md',
 ];
 
 // ==============================================================================

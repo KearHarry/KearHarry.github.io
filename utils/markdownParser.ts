@@ -6,17 +6,22 @@ import { POST_FILES } from '../constants';
  * Parses frontmatter from a markdown string.
  */
 export function parseMarkdownFile(filename: string, rawContent: string): BlogPost {
+  // 从路径中提取文件夹名作为大分类，如 'C++/C++面试题（1）.md' => 'C++'
+  const folderCategory = filename.includes('/') ? filename.split('/')[0] : null;
+  const bareFilename = filename.includes('/') ? filename.split('/').slice(1).join('/') : filename;
+
   const match = /---\n([\s\S]*?)\n---\n([\s\S]*)/.exec(rawContent);
 
   if (!match) {
+    const fallbackCategories = folderCategory ? [folderCategory] : ['其他'];
     return {
       id: filename,
-      slug: filename.replace(/\.md$/, ''),
-      title: filename.replace(/\.md$/, ''),
+      slug: bareFilename.replace(/\.md$/, ''),
+      title: bareFilename.replace(/\.md$/, ''),
       date: '未知日期',
       excerpt: '',
       content: rawContent,
-      categories: ['其他']
+      categories: fallbackCategories
     };
   }
 
@@ -51,6 +56,14 @@ export function parseMarkdownFile(filename: string, rawContent: string): BlogPos
     // 支持中英文逗号分隔，去除空项
     categories = rawCats.split(/[,，]/).map(s => s.trim()).filter(Boolean);
   } else {
+    categories = [];
+  }
+
+  // 将文件夹大分类自动合并（去重）
+  if (folderCategory && !categories.includes(folderCategory)) {
+    categories.unshift(folderCategory);
+  }
+  if (categories.length === 0) {
     categories = ['其他'];
   }
 
@@ -59,7 +72,7 @@ export function parseMarkdownFile(filename: string, rawContent: string): BlogPos
     // Enhanced slug generation to support multi-language characters (e.g., Chinese)
     slug: metadata.title 
       ? metadata.title.toLowerCase().replace(/[^a-z0-9\u4e00-\u9fa5]+/g, '-').replace(/(^-|-$)+/g, '') 
-      : filename.replace(/\.md$/, ''),
+      : bareFilename.replace(/\.md$/, ''),
     title: metadata.title || '无标题',
     date: metadata.date || '未知日期',
     excerpt: metadata.excerpt || '',
@@ -75,8 +88,9 @@ export async function loadAllPosts(): Promise<BlogPost[]> {
   const posts = await Promise.all(
     POST_FILES.map(async (filename) => {
       try {
-        // Fetch relative to the public root, encoding filename for safety with special characters
-        const response = await fetch(`posts/${encodeURIComponent(filename)}`);
+        // Fetch relative to the public root, encoding each path segment for safety with special characters
+        const encodedPath = filename.split('/').map(seg => encodeURIComponent(seg)).join('/');
+        const response = await fetch(`posts/${encodedPath}`);
         if (!response.ok) throw new Error(`Failed to fetch ${filename}`);
         const text = await response.text();
         return parseMarkdownFile(filename, text);
